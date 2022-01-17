@@ -1,0 +1,154 @@
+Feature: Successful register with email address
+
+
+
+Senario Outline: Register scenarios with test datalist
+Given: I open the "https://calendly.com/" for the firt time 
+When : I  enter tap to "Get Started" button
+And: I enter "<email adress>" in the email field
+And: I enter  "Sign up " button
+And: I enter "<name>" in the "Enter your full name." field
+And: I enter "<password>" in the password field
+Then I should see the verify page
+
+Examples:
+            e-mail           |  name          | password|
+   gatotol772@nabajin.com       Johnn Doee        Joe852**
+   
+   
+   
+   
+Negative Testing
+
+Feature: UnSuccessful register with email address
+
+
+
+Senario Outline: Register scenarios with test datalist
+Given: I open the "https://calendly.com/" for the firt time 
+When : I  enter tap to "Get Started" button
+And: I enter "<email adress>" in the email field
+And: I enter  "Sign up " button
+Then I should see the "Please enter a valid email address" 
+
+Examples:
+     |        e-mail             |
+       hjsadhjsadjsahdjhsa      
+       sdjkfdsjhfdsjhf@dsasadsa
+       ********??????@sdssadsa
+      
+
+Feature: Successful Login with email adress 
+
+Senario Outline: Login scenarios with test data list
+
+Given: I open the "https://calendly.com/" for the firt time 
+When : I  enter tap to "Log In " button
+And: I enter "<email adress>" in the email field
+And: I enter  "Log In" button
+And: I enter "<password>" in the password field
+And: I enter  "Cont" button
+Then I should see the main page
+Examples: 
+            e-mail             | password|
+   gatotol772@nabajin.com        Joe852**
+
+Feature: UnSuccessful Login with email adress 
+
+Senario Outline: Login scenarios with test data list
+
+Given: I open the "https://calendly.com/" for the firt time 
+When : I  enter tap to "Log In " button
+And: I enter "<email adress>" in the email field
+And: I enter  "Log In" button
+And: I enter "<password>" in the password field
+And: I enter  "Continue" button
+Then I should see the Invalid password.
+
+Examples:  |password|
+          1111111 # wrong password
+          
+          
+Feature: Successful Create event
+
+Senario Outline: Login scenarios with test data list
+
+Given: I open the "https://calendly.com/" for the firt time 
+When : I  enter tap to "Log In " button
+And: I enter "<email adress>" in the email field
+And: I enter  "Log In" button
+And: I enter "<password>" in the password field
+And: I enter  "Cont" button 
+And: I enter "Create +" button
+And: I enter "Event Type" button
+And: I enter "Create" button            # One-on-One line
+And: I enter "<Event name>" in the Event name field
+And: I Select "<Location>" 
+And: I enter "<event link>" in the event link field
+And: I Select "<Event Color>"
+Then: I should see the event is created
+Examples:
+              e-mail              | password|    |event name|    |location|  |event link|    |event color|    
+   gatotol772@nabajin.com           Joe852**     ????????         zoom          ?????           Yellow button
+   
+   
+   
+Feature: Logo and retun main page
+
+Scenario outline: click logo and return main page
+
+Given: I open the "https://calendly.com/"
+When : I  enter tap to "Log In " button
+And: I enter "<email adress>" in the email field
+And: I enter  "Log In" button
+And: I enter "<password>" in the password field
+And: I enter  "Cont" button 
+And: I enter "Create +" button
+And: I enter "Event Type" button
+And: I enter "Create" button # main aim is go to different page. you can select any button or page link
+And: I enter "Logo" button
+Then I should see the main page
+Examples: 
+            e-mail             | password|
+   gatotol772@nabajin.com        Joe852**
+
+Feature: ... Bar test
+Scenario outline: click logo and return main page
+
+Given: I open the "https://calendly.com/"
+When : I  enter tap to "Log In " button
+And: I enter "<email adress>" in the email field
+And: I enter  "Log In" button
+And: I enter "<password>" in the password field
+And: I enter  "Cont" button 
+And: I enter "Create +" button
+And: I enter "Event Type" button
+And: I enter "Create" button # main aim is go to different page. you can select any button or page link
+And: I enter "..." button
+Then I should see the settings pop up
+Examples: 
+            e-mail             | password|
+   gatotol772@nabajin.com        Joe852**
+   
+   
+   Feature: ... Bar test
+Scenario outline: click logo and return main page
+
+Given: I open the "https://calendly.com/"
+When : I  enter tap to "Log In " button
+And: I enter "<email adress>" in the email field
+And: I enter  "Log In" button
+And: I enter "<password>" in the password field
+And: I enter  "Cont" button 
+And: I enter "Create +" button
+And: I enter "Event Type" button
+And: I enter "Create" button # main aim is go to different page. you can select any button or page link
+And: I enter "..." button
+Then I should see the settings pop up
+Examples: 
+            e-mail             | password|
+   gatotol772@nabajin.com        Joe852**
+
+
+
+
